@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite to Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Invite to Play</h1>
+        <p id="message">Invite 3 friends to access the game!</p>
+        <button id="invite-btn">Invite a Friend</button>
+        <button id="generate-btn" disabled>Generate Word</button>
+        <div id="word-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
