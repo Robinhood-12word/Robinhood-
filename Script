@@ -1,0 +1,36 @@
+let invites = 0;
+
+document.getElementById('invite-btn').addEventListener('click', () => {
+    invites++;
+    updateMessage();
+});
+
+document.getElementById('generate-btn').addEventListener('click', () => {
+    if (invites >= 1) {
+        document.getElementById('word-container').innerText = generateWord();
+        invites--;
+        updateMessage();
+    }
+});
+
+function updateMessage() {
+    const message = document.getElementById('message');
+    const generateBtn = document.getElementById('generate-btn');
+
+    if (invites < 3) {
+        message.innerText = `Invite ${3 - invites} more friends to access the game!`;
+        generateBtn.disabled = invites < 1;
+    } else {
+        message.innerText = 'You have full access to the game!';
+        generateBtn.disabled = false;
+    }
+}
+
+function generateWord() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let word = '';
+    for (let i = 0; i < 12; i++) {
+        word += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return word;
+}
